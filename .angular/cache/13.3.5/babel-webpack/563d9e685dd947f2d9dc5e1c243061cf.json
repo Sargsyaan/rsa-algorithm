@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from '@taiga-ui/cdk/pipes/filter';\nexport * from '@taiga-ui/cdk/pipes/mapper';\n/**\n * Generated bundle index. Do not edit.\n */\n//# sourceMappingURL=taiga-ui-cdk-pipes.js.map","map":null,"metadata":{},"sourceType":"module"}

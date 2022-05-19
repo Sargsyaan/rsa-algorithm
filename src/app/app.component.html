@@ -1,0 +1,100 @@
+<tui-root>
+  <h1 class="tui-form__header_margin-bottom_small">
+    RSA Կոդավորում/Ապակոդավորում
+  </h1>
+  <tui-accordion class="container" [closeOthers]="false">
+    <tui-accordion-item [(open)]="rsaBitOpen">
+      <strong>RSA բանալու գեներացում</strong>
+      <ng-template tuiAccordionItemContent>
+        <div style="display: flex; align-items: center;">
+          <button
+            tuiButton
+            appearance="accent"
+            type="button"
+            size="m"
+            class="tui-space_right-1 tui-space_bottom-1"
+            (click)="generateKeys()"
+          >
+            Գեներացնել
+          </button>
+        </div>
+        <div style="margin-top: 1rem; display: flex; justify-content: space-between; width: 50%">
+          <label
+            tuiLabel
+            label="Public բանալի"
+          >
+           {{publicKey || 'N/A'}}
+          </label>
+          <br>
+          <label
+            tuiLabel
+            label="Private բանալի"
+          >
+            {{privateKey || 'N/A'}}
+          </label>
+        </div>
+      </ng-template>
+    </tui-accordion-item>
+    <tui-accordion-item>
+      <strong>Կոդավորում</strong>
+      <ng-template tuiAccordionItemContent>
+        <div #content>
+          <tui-input-number [(ngModel)]="toEncode">
+            Կոդավորվող թիվը
+            <input tuiTextfield/>
+          </tui-input-number>
+        </div>
+        <br>
+        <button
+          tuiButton
+          appearance="accent"
+          type="button"
+          size="m"
+          class="tui-space_right-1 tui-space_bottom-1"
+          (click)="encode()"
+        >
+          Կոդավորել
+        </button>
+        <br>
+        <br>
+        <label
+          tuiLabel
+          label="Արդյունք"
+        >
+          {{encodeResult || 'N/A'}}
+        </label>
+      </ng-template>
+    </tui-accordion-item>
+    <tui-accordion-item>
+      <strong>Ապակոդավորում</strong>
+      <ng-template tuiAccordionItemContent>
+        <div #content>
+          <tui-input-number [(ngModel)]="toDecode">
+            Ապակոդավորվող թիվը
+            <input tuiTextfield/>
+          </tui-input-number>
+        </div>
+        <br>
+        <button
+          tuiButton
+          appearance="accent"
+          type="button"
+          size="m"
+          class="tui-space_right-1 tui-space_bottom-1"
+          (click)="decode()"
+        >
+          Ապակոդավորել
+        </button>
+        <br>
+        <br>
+        <label
+          tuiLabel
+          label="Արդյունք"
+        >
+          {{decodeResult || 'N/A'}}
+        </label>
+      </ng-template>
+    </tui-accordion-item>
+  </tui-accordion>
+
+</tui-root>
